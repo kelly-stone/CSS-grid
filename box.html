@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Grids</title>
+    <style>
+      .wrapper > div {
+        background: #8e8d8d;
+        padding: 1em;
+      }
+
+      .wrapper > div:nth-child(even) {
+        background: #d7e8f3;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 1em;
+        grid-auto-rows: minmax(100px, auto);
+        justify-items: center;
+        /* same as align-items: center; */
+        /* to make it nicer: using stretch as default*/
+        justify-items: stretch;
+
+        align-items: stretch;
+      }
+
+      .box1 {
+        /* try different grid-row and grid-column */
+        grid-row: 1/4;
+        /* same as grid-column: span 3; try span 2  */
+        /* align-self: start; */
+      }
+
+      .box2 {
+        justify-self: start;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box1">box1</div>
+      <div>box2</div>
+      <div>box3</div>
+      <div>box4</div>
+      <div>Hello! Merry Christmas!</div>
+      <div>Merry Christmas and Happy New Year!!!</div>
+    </div>
+  </body>
+</html>
